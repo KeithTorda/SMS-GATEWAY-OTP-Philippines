@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="sms_gateway_banner_1776321948947.png" alt="SMS Gateway Philippines Banner" width="100%">
+  <img src="docs/screenshots/send_sms.png" alt="SMS Gateway Philippines Dashboard" width="100%">
 </p>
 
 # 📱 SMS Gateway & OTP Philippines
@@ -10,6 +10,18 @@
 [![Network](https://img.shields.io/badge/Networks-Globe%20%7C%20Smart%20%7C%20DITO-0052cc?style=for-the-badge)](https://en.wikipedia.org/wiki/Telecommunications_in_the_Philippines)
 
 **A high-fidelity, professional-grade SMS Gateway and OTP management system.** Engineered specifically for the Philippine telecommunications landscape, this system enables developers to bridge web applications with physical SIM cards using a centralized Android-to-Cloud architecture.
+
+---
+
+## 📸 Preview
+
+````carousel
+![Send SMS](docs/screenshots/send_sms.png)
+<!-- slide -->
+![Message Logs](docs/screenshots/message_logs.png)
+<!-- slide -->
+![Integration Guide](docs/screenshots/integration_guide.png)
+````
 
 ---
 
