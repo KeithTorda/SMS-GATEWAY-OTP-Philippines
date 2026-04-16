@@ -2,14 +2,39 @@
   <img src="docs/screenshots/send_sms.png" alt="SMS Gateway Philippines Dashboard" width="100%">
 </p>
 
-# 📱 SMS Gateway & OTP Philippines
+<div align="center">
+  <h2 align="center">SMS Gateway & OTP Philippines</h2>
+  <p align="center">
+    Turns your smartphone into an SMS gateway for sending and receiving messages via API.
+    <br />
+    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines/issues">Request Feature</a>
+  </p>
+</div>
 
-[![PHP Version](https://img.shields.io/badge/php-%5E7.4%20%7C%208.x-blue?style=for-the-badge&logo=php)](https://php.net)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Database](https://img.shields.io/badge/Database-MySQL%20%2F%20MariaDB-orange?style=for-the-badge&logo=mysql)](https://mysql.com)
-[![Network](https://img.shields.io/badge/Networks-Globe%20%7C%20Smart%20%7C%20DITO-0052cc?style=for-the-badge)](https://en.wikipedia.org/wiki/Telecommunications_in_the_Philippines)
-
-**A high-fidelity, professional-grade SMS Gateway and OTP management system.** Engineered specifically for the Philippine telecommunications landscape, this system enables developers to bridge web applications with physical SIM cards using a centralized Android-to-Cloud architecture.
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#ideal-for">Ideal For</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#permissions">Permissions</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#webhooks">Webhooks</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#links">Links</a></li>
+  </ol>
+</details>
 
 ---
 
@@ -25,121 +50,134 @@
 
 ---
 
-## ✨ Features at a Glance
+## About The Project
 
-| Feature | Description |
+This project is a localized PHP implementation of a web dashboard and API gateway designed to work seamlessly with the original **Android SMS Gateway** by [capcom6](https://github.com/capcom6/android-sms-gateway).
+
+It turns your Android smartphone into a professional-grade SMS gateway for the Philippines. This lightweight application allows you to send SMS messages programmatically via a unified API and receive real-time webhooks on your outgoing message status. It is ideal for integrating SMS functionality into your own applications or services using local Philippine SIM cards.
+
+---
+
+## Features
+
+### 📱 Core Functionality
+- **🆓 No registration required**: In local mode, you don't need a third-party account.
+- **📨 Send and Receive SMS via API**: Use our professional REST API to trigger messages directly.
+- **🤖 PHP & MySQL Powered**: Built with a clean MVC architecture for stability and speed.
+- **🇵🇭 PH Network Optimized**: Pre-configured for Globe, Smart, DITO, and more.
+
+### 💬 Message Handling
+- **📜 Multipart messages**: Supports long messages with auto-partitioning.
+- **📊 Real-time Tracking**: Monitor message status (Sent, Delivered, Failed) in the dash.
+- **📥 Activity Logger**: View all message history with granular time-stamps.
+
+### 🔒 Security and Privacy
+- **🏢 Private Server Support**: Deploy this on your own infrastructure for full data ownership.
+- **🔐 API Key Protection**: Generate and revoke keys for external system integrations.
+
+---
+
+## Ideal For
+- **🔐 Authentication & Verification**: Secure your PH apps with local SMS-based 2FA.
+- **📩 Transactional Messages**: Confirm orders or user actions via text.
+- **⏰ SMS Reminders**: Automated appointment or event alerts.
+- **📊 User Feedback**: Collect insights via direct SMS interaction.
+
+> [!IMPORTANT]
+> **Note**: It is not recommended to use this for batch sending (spamming) due to potential mobile operator restrictions in the Philippines.
+
+---
+
+## Built With
+- **Backend**: [PHP 7.4/8.x](https://php.net)
+- **Database**: [MySQL / MariaDB](https://mysql.com)
+- **UI Framework**: Vanilla CSS & [Tailwind-style modern components]
+- **Core Engine**: [Android SMS Gateway](https://github.com/capcom6/android-sms-gateway)
+
+---
+
+## Installation
+
+### Prerequisites
+- **Android Device**: Running Android 5.0 (Lollipop) or above.
+- **PHP Environment**: Apache/Nginx with PHP 7.4+.
+- **Database**: Active MySQL instance.
+
+### Permissions
+To use the companion Android application, ensure these permissions are granted:
+- `SEND_SMS`: Required to send messages.
+- `READ_PHONE_STATE`: Optional (for SIM selection).
+- `RECEIVE_SMS`: Optional (for incoming webhooks).
+
+### Installation from APK
+1. Download the latest APK from the [capcom6/android-sms-gateway Releases](https://github.com/capcom6/android-sms-gateway/releases).
+2. Install the APK on your Android device (Enable "Unknown sources").
+3. Configure the app to **Cloud Mode** or **Private Server** mode pointing to your deployed dashboard.
+
+---
+
+## Getting Started
+
+### Local Setup
+1. Clone this repository: `git clone https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines.git`
+2. Create your `.env` file: `cp .env.example .env`
+3. Configure your DB and App URL in `.env`.
+4. Import `config/schema.sql` to your database.
+
+### API Usage Example (PHP)
+```php
+curl -X POST -H "X-API-KEY: YOUR_KEY_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{ "phone_number": "09123456789", "message": "Hello from PH Gateway!" }' \
+  https://your-domain.com/api/send
+```
+
+---
+
+## Webhooks
+
+The system supports real-time event notifications sent from your device:
+
+| Event | Description |
 | :--- | :--- |
-| **📊 Intelligent Dashboard** | Real-time telemetry on SMS throughput, success rates, and delivery latencies. |
-| **🔐 OTP Engine** | Built-in logic for generating secure, time-sensitive verification codes. |
-| **🔌 Universal API** | RESTful endpoints compatible with PHP, Python, Node.js, and more. |
-| **📱 Device Mirroring** | Direct integration with the **SMS Gate** Android app for physical SIM sending. |
-| **📜 Audit Logs** | Granular history of every message, including carrier-level failure reasons. |
-| **🎨 Premium UI** | Dynamic, glassmorphic interface with dark mode support and responsive layouts. |
+| `sms:sent` | Triggered when an SMS message is successfully sent. |
+| `sms:delivered` | Triggered when receiving a carrier delivery report. |
+| `sms:failed` | Triggered when a message fails to send. |
 
 ---
 
-## 🏗️ How It Works (Architecture)
-
-```mermaid
-graph TD
-    A[External App / Website] -- REST API --> B[PHP SMS Gateway Server]
-    C[Web Admin Dashboard] -- Manual Send --> B
-    B -- Cloud Sync --> D[SMS Gate Cloud Service]
-    D -- Push Notification --> E[Android Device]
-    E -- Physical SIM --> F[Philippine Mobile Number]
-    F -- Delivery Status --> E
-    E -- Webhook Update --> B
-```
+## Roadmap
+- [ ] Multi-device account management.
+- [ ] Intelligent scheduling for batch alerts.
+- [ ] Detailed SIM card analytics.
+- [ ] International SMS routing options.
 
 ---
 
-## 🚀 Professional Installation Guide
-
-### 📋 Prerequisites
-- **Web Server**: Apache / Nginx (PHP 7.4 or 8.x recommended)
-- **Database**: MySQL 5.7+ or MariaDB 10.4+
-- **Extensions**: `php-curl`, `php-pdo`, `php-mbstring`
-- **Android Device**: Running Android 6.0+ with an active SIM card.
-
-### 1️⃣ Clone and Environment Setup
-Clone the repository and initialize the security configuration:
-```bash
-git clone https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines.git
-cd SMS-GATEWAY-OTP-Philippines
-cp .env.example .env
-```
-
-### 2️⃣ Configure Environment
-Open `.env` and configure your localized settings:
-```env
-DB_HOST=localhost
-DB_NAME=smsgate_db
-DB_USER=root
-DB_PASS=your_secure_password
-APP_URL=https://yourdomain.com/public
-APP_NAME="SMS Gateway PH"
-```
-
-### 3️⃣ Database Initialization
-Create a new database and import the schema:
-```bash
-mysql -u root -p smsgate_db < config/schema.sql
-```
-
-### 4️⃣ Android Hardware Integration
-This system is powered by the **SMS Gate** Android solution.
-1. Download the app from [sms-gate.app](https://sms-gate.app/).
-2. In the app, navigate to **Settings** and retrieve your **API Username**, **API Password**, and **Device ID**.
-3. In your Web Dashboard, go to **Settings** and input these values to link your hardware.
+## Contributing
+Contributions make the open source community amazing! 
+1. **Fork** the Project.
+2. Create your **Feature Branch**.
+3. **Commit** your Changes.
+4. **Push** to the Branch.
+5. Open a **Pull Request**.
 
 ---
 
-## 🔌 API Reference
-
-### Send SMS
-**Endpoint**: `POST /api/send`
-
-**Request Headers**:
-| Header | Value | Description |
-| :--- | :--- | :--- |
-| `X-API-KEY` | `your_secret_key` | Generated via the Dashboard Settings. |
-| `Content-Type` | `application/json` | Required for JSON payloads. |
-
-**Request Body**:
-```json
-{
-    "phone_number": "09123456789",
-    "message": "Your verification code is 882910.",
-    "sender_name": "MyPHApp",
-    "sim_slot": 1
-}
-```
+## License
+Distributed under the **MIT License**. Credits to [capcom6](https://github.com/capcom6) for the original Android implementation.
 
 ---
 
-## 🇵🇭 Philippine Network Compatibility
-This system has been verified to work with major Philippine carriers:
-- **Globe / TM** (Prepaid & Postpaid)
-- **Smart / TNT / Sun** (Prepaid & Postpaid)
-- **DITO Telecommunity**
-- **GOMO**
+## Contact
+**Keith Torda** - [GitHub Profile](https://github.com/KeithTorda)
+System Support: [support@sms-gate.app](mailto:support@sms-gate.app)
 
 ---
 
-## 🛠️ Troubleshooting
+## Links
+- **Official Website**: [sms-gate.app](https://sms-gate.app)
+- **Source App**: [capcom6/android-sms-gateway](https://github.com/capcom6/android-sms-gateway)
+- **Docs**: [docs.sms-gate.app](https://docs.sms-gate.app)
 
-> [!TIP]
-> **Check Signal Strength**: If messages are "Pending" but never sent, check the Android device for data connectivity and SIM signal.
-
-> [!WARNING]
-> **Webhook Conflicts**: Ensure your `APP_URL` in `.env` is accessible from the public internet (use Ngrok for local testing) to receive delivery status updates.
-
----
-
-## 📜 License & Credits
-- **Developer**: [Keith Torda](https://github.com/KeithTorda)
-- **Engine Source**: [SMS Gate](https://sms-gate.app/)
-- **License**: Distributed under the MIT License. See `LICENSE` for more information.
-
----
 <p align="center">Made with ❤️ in the Philippines</p>
