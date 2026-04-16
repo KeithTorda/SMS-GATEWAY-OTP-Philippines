@@ -40,13 +40,11 @@
 
 ## 📸 Preview
 
-````carousel
-![Send SMS](docs/screenshots/send_sms.png)
-<!-- slide -->
-![Message Logs](docs/screenshots/message_logs.png)
-<!-- slide -->
-![Integration Guide](docs/screenshots/integration_guide.png)
-````
+<p align="center">
+  <img src="docs/screenshots/send_sms.png" width="32%" />
+  <img src="docs/screenshots/message_logs.png" width="32%" /> 
+  <img src="docs/screenshots/integration_guide.png" width="32%" />
+</p>
 
 ---
 
