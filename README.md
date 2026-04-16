@@ -3,16 +3,23 @@
 </p>
 
 <div align="center">
-  <h2 align="center">SMS Gateway & OTP Philippines</h2>
+  <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines">
+    <img src="https://img.icons8.com/isometric/512/sms.png" alt="Logo" width="120" height="120">
+  </a>
+
+  <h1 align="center">SMS Gateway & OTP Philippines</h1>
+
   <p align="center">
-    Turns your smartphone into an SMS gateway for sending and receiving messages via API.
+    <b>Turns your smartphone into a high-performance SMS gateway for the Philippine market.</b>
     <br />
     <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines/issues">Report Bug</a>
+    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines/issues">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines/issues">Request Feature</a>
+    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines/issues">✨ Request Feature</a>
+    ·
+    <a href="https://github.com/KeithTorda/SMS-GATEWAY-OTP-Philippines/pulls">🤝 Pull Request</a>
   </p>
 </div>
 
