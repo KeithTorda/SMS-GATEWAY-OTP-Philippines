@@ -1,0 +1,11 @@
+# Environment secrets
+.env
+
+# XAMPP/OS Specific
+.DS_Store
+Thumbs.db
+error_log
+
+# Project specific
+public/storage/*
+!public/storage/.gitkeep
